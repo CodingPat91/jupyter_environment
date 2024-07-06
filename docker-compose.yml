@@ -1,0 +1,72 @@
+services:
+  jupyter:
+    build: .
+    ports:
+      - 8888:8888
+    volumes:
+      - ./work/:/home/jovyan/
+    environment:
+      JUPYTER_TOKEN: 123
+    networks:
+      - mynetwork
+    depends_on:
+      - postgres
+      - mongodb
+      - neo4j
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: pat
+      POSTGRES_PASSWORD: pat1
+      POSTGRES_DB: post_db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+  
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: pat
+      MONGO_INITDB_ROOT_PASSWORD: pat1
+      MONGO_INITDB_DATABASE: mongo_db
+    volumes: 
+      - ./mongodb_data:/data/db 
+    networks:
+      - mynetwork
+  
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687" 
+    environment:
+      NEO4J_AUTH: neo4j/pat1pat1
+
+    volumes:
+      - ./neo4j_data:/data
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  mongodb_data:
+  neo4j_data:
+
+# ARG zum Build
+# ENVs zur Laufzeit
+# MiniKube siumliert Cluster für Kubernetes
+# Kubernetes Grundlagen lernen 
+# Rancher Kuberntes "Frontend"

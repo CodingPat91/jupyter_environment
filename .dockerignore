@@ -1,0 +1,7 @@
+node_modules
+*.ipynb
+.git
+mongodb_data
+neo4j_data
+postgres_data
+work
