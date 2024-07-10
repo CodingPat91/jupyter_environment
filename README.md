@@ -16,6 +16,8 @@ Die Jupyter-Umgebung ist nun lokal gehostet und erreichbar durch:
 Können erreicht werden durch:
 
 ### Postgres
+
+```python
 from sqlalchemy import create_engine
 
 db_user = 'pat'
@@ -26,14 +28,18 @@ db_name = 'post_db'
 
 engine = create_engine(f'postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
 engine.connect() # Teste Connection
+```
 
 ### MongoDB
+```python
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://pat:pat1@mongodb:27017/')
 client.server_info() # Teste Connection
+```
 
 ### neo4j
+```python
 from neo4j import GraphDatabase
 
 uri = "bolt://neo4j:7687"
@@ -43,4 +49,4 @@ password = "pat1pat1"
 driver = GraphDatabase.driver(uri, auth=(user, password))
 
 driver.session().run("RETURN 1 AS number") # Teste Connection
-
+```
