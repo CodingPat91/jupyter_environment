@@ -62,8 +62,14 @@ networks:
 
 volumes:
   postgres_data:
+    driver_opts:
+      size: 1.5GiB
   mongodb_data:
+    driver_opts:
+      size: 1.5GiB
   neo4j_data:
+    driver_opts:
+      size: 1.5GiB
 
 # ARG zum Build
 # ENVs zur Laufzeit
