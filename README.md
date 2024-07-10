@@ -3,7 +3,7 @@ Baue deine eigene Jupyter-Umgebung  inklusive postgres-DB, mongo-DB & neo4j-DB p
 - Jupyter-Token=123
 
 ## Build-Images
- Naviergiere dich in das root Verzechniss des Repositorys und baue das Image per Docker mit:
+ Naviergiere dich in das root Verzeichnis des Repositorys und baue das Image per Docker mit:
  ```sh
 docker-compose build
 ```
@@ -24,7 +24,7 @@ Die Jupyter-Umgebung ist nun lokal gehostet und erreichbar im Browser durch:
 - `localhost:8888`
 
 ## Datenbanken
-Können erreicht werden durch:
+Verbindung der Datenbanken können wie folgt hergestellt und getestet werden:
 
 ### Postgres
 
