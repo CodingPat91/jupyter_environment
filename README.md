@@ -1,20 +1,20 @@
 # Jupyter-Enviroment
-Baue deine eigene Jupyter-Umgebung mit inklusive postgres-DB, mongo-DB & neo4j-DB per Docker-Compose auf.
+Baue deine eigene Jupyter-Umgebung  inklusive postgres-DB, mongo-DB & neo4j-DB per Docker-Compose auf.
 - Jupyter-Token=123
 
 ## Build-Images
- Naviergiere dich in das root Verzechniss des Repositorys und baue den image per Docker mit
+ Naviergiere dich in das root Verzechniss des Repositorys und baue das Image per Docker mit:
  ```sh
 docker-compose build
 ```
 
-## Instanziere Container
-Navigiere dich ins root Verzeichnis des Repos und instanziere den Container durch
+## Instanziiere Container
+Navigiere dich ins root Verzeichnis des Repos und instanziiere den Container durch:
 ```sh
 docker-compose up -d
 ```
 Die Jupyter-Umgebung ist nun lokal gehostet und erreichbar im Browser durch:
-- localhost:8888
+- `localhost:8888`
 
 ## Datenbanken
 Können erreicht werden durch:
@@ -54,3 +54,5 @@ driver = GraphDatabase.driver(uri, auth=(user, password))
 
 driver.session().run("RETURN 1 AS number") # Teste Connection
 ```
+Im Browser erreichst du die graphische Oberfläche inklusive Tutorial der neo4j-Graphdb durch: 
+- `localhost:7474`
