@@ -1,6 +1,6 @@
 # Jupyter-Enviroment
 Baue deine eigene Jupyter-Umgebung mit inklusive postgres-DB, mongo-DB & neo4j-DB per Docker-Compose auf.
-Jupyter-Token= 123
+- Jupyter-Token=123
 
 ## Build-Images
  Naviergiere dich in das root Verzechniss des Repositorys und baue den image per Docker mit
