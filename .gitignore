@@ -3,3 +3,4 @@ neo4j_data
 postgres_data
 work
 .ipynb_checkpoints
+.DS_Store
