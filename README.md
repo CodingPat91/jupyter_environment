@@ -13,6 +13,13 @@ Navigiere dich ins root Verzeichnis des Repos und instanziiere den Container dur
 ```sh
 docker-compose up -d
 ```
+Nach der Instanziierung findest du die Ordner der Datenbanken als Bind-Mounts im root-Verzeichnis des Repos:
+```jupyter_environment/
+├── mongodb_data/
+├── neo4j_data/
+└── postgres_data
+```
+
 Die Jupyter-Umgebung ist nun lokal gehostet und erreichbar im Browser durch:
 - `localhost:8888`
 
